@@ -1,7 +1,7 @@
 import time
 from functools import wraps
 
-time_result = 'TimeResult.txt'
+time_result = 'Results/TimeResult.txt'
 
 with open(time_result, 'w'):
     pass

@@ -1,0 +1,3 @@
+For file QueryResults.csv:
+	In Header "Results" means the hightiest ball for English test in current year
+		  "Year" means the year of maximum ball wich represents in this row

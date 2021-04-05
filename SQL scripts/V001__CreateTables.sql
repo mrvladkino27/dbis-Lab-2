@@ -2,7 +2,7 @@
 
 CREATE TABLE IF NOT EXISTS region
 (
-    regname text COLLATE pg_catalog."default" NOT NULL,
+    regname text COLLATE pg_catalog."default",
     CONSTRAINT "Region_pkey" PRIMARY KEY (regname)
 )
 WITH (
@@ -17,7 +17,7 @@ ALTER TABLE region
 
 CREATE TABLE IF NOT EXISTS area
 (
-    areaname text COLLATE pg_catalog."default" NOT NULL,
+    areaname text COLLATE pg_catalog."default",
     regname text COLLATE pg_catalog."default",
     CONSTRAINT "Area_pkey" PRIMARY KEY (areaname),
     CONSTRAINT "RegNameFK" FOREIGN KEY (regname)
@@ -38,7 +38,7 @@ ALTER TABLE area
 
 CREATE TABLE IF NOT EXISTS classlang
 (
-    languagename text COLLATE pg_catalog."default" NOT NULL,
+    languagename text COLLATE pg_catalog."default",
     CONSTRAINT "ClassLang_pkey" PRIMARY KEY (languagename)
 )
 WITH (
@@ -54,7 +54,7 @@ ALTER TABLE classlang
 
 CREATE TABLE IF NOT EXISTS classprofile
 (
-    classprofilename text COLLATE pg_catalog."default" NOT NULL,
+    classprofilename text COLLATE pg_catalog."default",
     CONSTRAINT "ClassProfile_pkey" PRIMARY KEY (classprofilename)
 )
 WITH (
@@ -69,7 +69,7 @@ ALTER TABLE classprofile
 
 CREATE TABLE IF NOT EXISTS dpalevel
 (
-    name text COLLATE pg_catalog."default" NOT NULL,
+    name text COLLATE pg_catalog."default",
     CONSTRAINT "DPALevel_pkey" PRIMARY KEY (name)
 )
 WITH (
@@ -84,7 +84,7 @@ ALTER TABLE dpalevel
 
 CREATE TABLE IF NOT EXISTS parentschool
 (
-    parentname text COLLATE pg_catalog."default" NOT NULL,
+    parentname text COLLATE pg_catalog."default",
     CONSTRAINT "ParentSchool_pkey" PRIMARY KEY (parentname)
 )
 WITH (
@@ -100,7 +100,7 @@ ALTER TABLE parentschool
 
 CREATE TABLE IF NOT EXISTS registration
 (
-    name text COLLATE pg_catalog."default" NOT NULL,
+    name text COLLATE pg_catalog."default",
     CONSTRAINT "RegistrationName_pkey" PRIMARY KEY (name)
 )
 WITH (
@@ -116,7 +116,7 @@ ALTER TABLE registration
 
 CREATE TABLE IF NOT EXISTS schooltype
 (
-    typename text COLLATE pg_catalog."default" NOT NULL,
+    typename text COLLATE pg_catalog."default",
     CONSTRAINT "SchoolType_pkey" PRIMARY KEY (typename)
 )
 WITH (
@@ -132,7 +132,7 @@ ALTER TABLE schooltype
 
 CREATE TABLE IF NOT EXISTS studentgender
 (
-    name text COLLATE pg_catalog."default" NOT NULL,
+    name text COLLATE pg_catalog."default",
     CONSTRAINT "StudentGender_pkey" PRIMARY KEY (name)
 )
 WITH (
@@ -148,7 +148,7 @@ ALTER TABLE studentgender
 
 CREATE TABLE IF NOT EXISTS teritorytype
 (
-    name text COLLATE pg_catalog."default" NOT NULL,
+    name text COLLATE pg_catalog."default",
     CONSTRAINT "TeritoryType_pkey" PRIMARY KEY (name)
 )
 WITH (
@@ -164,7 +164,7 @@ ALTER TABLE teritorytype
 
 CREATE TABLE IF NOT EXISTS teritory
 (
-    name text COLLATE pg_catalog."default" NOT NULL,
+    name text COLLATE pg_catalog."default",
     tertype text COLLATE pg_catalog."default",
     areaname text COLLATE pg_catalog."default",
     CONSTRAINT "Teritory_pkey" PRIMARY KEY (name),
@@ -300,7 +300,7 @@ ALTER TABLE testlanguage
 
 CREATE TABLE IF NOT EXISTS student
 (
-    outid character varying(100)[] COLLATE pg_catalog."default" NOT NULL,
+    outid text COLLATE pg_catalog."default" NOT NULL,
     birthday smallint,
     gender text COLLATE pg_catalog."default",
     teritoryname text COLLATE pg_catalog."default",
@@ -347,7 +347,7 @@ ALTER TABLE student
 
 CREATE TABLE IF NOT EXISTS test
 (
-    studentid character varying(100)[] COLLATE pg_catalog."default" NOT NULL,
+    studentid text COLLATE pg_catalog."default" NOT NULL,
     subject text COLLATE pg_catalog."default" NOT NULL,
     year_no smallint NOT NULL,
 	testlanguage text COLLATE pg_catalog."default",
